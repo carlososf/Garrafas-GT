@@ -1,16 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { getImagePath } from '@/lib/utils';
 
 export default function Institutional() {
     const [currentPhoto, setCurrentPhoto] = useState(0);
 
     // Fotos da empresa (você pode substituir por fotos reais)
     const companyPhotos = [
-        { url: '/images/fabrica-1.jpg', alt: 'Fábrica Plásticos GT - Vista Externa' },
-        { url: '/images/fabrica-2.jpg', alt: 'Linha de Produção' },
-        { url: '/images/fabrica-3.jpg', alt: 'Ferramentaria' },
-        { url: '/images/fabrica-4.jpg', alt: 'Equipe Técnica' },
+        { url: getImagePath('/images/fabrica-1.jpg'), alt: 'Fábrica Plásticos GT - Vista Externa' },
+        { url: getImagePath('/images/fabrica-2.jpg'), alt: 'Linha de Produção' },
+        { url: getImagePath('/images/fabrica-3.jpg'), alt: 'Ferramentaria' },
+        { url: getImagePath('/images/fabrica-4.jpg'), alt: 'Equipe Técnica' },
     ];
 
     const timeline = [

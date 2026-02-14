@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getImagePath } from '@/lib/utils';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -56,14 +57,14 @@ export default function Header() {
                         >
                             {/* Logo for GREEN background (white version) */}
                             <img
-                                src="/Garrafas-GT/logo-white.png"
+                                src={getImagePath('/logo-white.png')}
                                 alt="Plásticos GT - Qualidade que molda o futuro"
                                 className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-0' : 'opacity-100'
                                     }`}
                             />
                             {/* Logo for WHITE background (color version) */}
                             <img
-                                src="/Garrafas-GT/logo-color.png"
+                                src={getImagePath('/logo-color.png')}
                                 alt="Plásticos GT - Qualidade que molda o futuro"
                                 className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-100' : 'opacity-0'
                                     }`}

@@ -1,20 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { getImagePath } from '@/lib/utils';
 
 export default function ClientsCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // Logos dos clientes (você pode substituir por logos reais)
     const clients = [
-        { name: 'Cliente 1', logo: '/images/clients/client-1.png' },
-        { name: 'Cliente 2', logo: '/images/clients/client-2.png' },
-        { name: 'Cliente 3', logo: '/images/clients/client-3.png' },
-        { name: 'Cliente 4', logo: '/images/clients/client-4.png' },
-        { name: 'Cliente 5', logo: '/images/clients/client-5.png' },
-        { name: 'Cliente 6', logo: '/images/clients/client-6.png' },
-        { name: 'Cliente 7', logo: '/images/clients/client-7.png' },
-        { name: 'Cliente 8', logo: '/images/clients/client-8.png' },
+        { name: 'Cliente 1', logo: getImagePath('/images/clients/client-1.png') },
+        { name: 'Cliente 2', logo: getImagePath('/images/clients/client-2.png') },
+        { name: 'Cliente 3', logo: getImagePath('/images/clients/client-3.png') },
+        { name: 'Cliente 4', logo: getImagePath('/images/clients/client-4.png') },
+        { name: 'Cliente 5', logo: getImagePath('/images/clients/client-5.png') },
+        { name: 'Cliente 6', logo: getImagePath('/images/clients/client-6.png') },
+        { name: 'Cliente 7', logo: getImagePath('/images/clients/client-7.png') },
+        { name: 'Cliente 8', logo: getImagePath('/images/clients/client-8.png') },
     ];
 
     // Auto-play do carrossel (sempre ativo)

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { getImagePath } from '@/lib/utils';
 
 export default function Hero() {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -42,7 +43,7 @@ export default function Hero() {
                         }}
                     >
                         <img
-                            src="/Garrafas-GT/logo-white.png"
+                            src={getImagePath('/logo-white.png')}
                             alt="Plásticos GT - Qualidade que molda o futuro"
                             className="w-full h-full object-contain drop-shadow-2xl"
                         />
@@ -95,7 +96,7 @@ export default function Hero() {
                         <div className="relative w-full h-[450px] flex items-center justify-center -mt-12">
                             <div className="relative w-full h-full flex items-center justify-center">
                                 <img
-                                    src="/Garrafas-GT/bottle-3d.gif"
+                                    src={getImagePath('/bottle-3d.gif')}
                                     alt="Garrafa PET 3D - Plásticos GT"
                                     className="w-full h-full object-contain animate-float"
                                     onError={(e) => {
