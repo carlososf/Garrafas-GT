@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: process.env.NODE_ENV === 'production' ? '/GARRAFAS-GT' : '',
+    basePath: process.env.NODE_ENV === 'production' ? '/Garrafas-GT' : '',
     images: {
         unoptimized: true, // Necessário para static export
         formats: ['image/webp', 'image/avif'],
