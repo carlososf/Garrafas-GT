@@ -1,5 +1,7 @@
 'use client';
 
+import { getImagePath } from '@/lib/utils';
+
 export default function VideoSection() {
     return (
         <section className="relative py-16 bg-white overflow-hidden">
@@ -34,10 +36,10 @@ export default function VideoSection() {
                                 loop
                                 muted
                                 playsInline
-                                poster="/video-thumbnail.jpg"
+                                poster={getImagePath('/video-thumbnail.jpg')}
                             >
-                                <source src="/company-video.mp4" type="video/mp4" />
-                                <source src="/company-video.webm" type="video/webm" />
+                                <source src={getImagePath('/company-video.mp4')} type="video/mp4" />
+                                <source src={getImagePath('/company-video.webm')} type="video/webm" />
                             </video>
 
                             {/* Subtle Overlay for Depth */}
