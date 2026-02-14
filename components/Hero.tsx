@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 export default function Hero() {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -42,12 +41,10 @@ export default function Hero() {
                             height: 'var(--logo-hero-height)'
                         }}
                     >
-                        <Image
-                            src="/logo-white.png"
+                        <img
+                            src="/Garrafas-GT/logo-white.png"
                             alt="Plásticos GT - Qualidade que molda o futuro"
-                            fill
-                            className="object-contain drop-shadow-2xl"
-                            priority
+                            className="w-full h-full object-contain drop-shadow-2xl"
                         />
                     </div>
                 </div>
@@ -98,7 +95,7 @@ export default function Hero() {
                         <div className="relative w-full h-[450px] flex items-center justify-center -mt-12">
                             <div className="relative w-full h-full flex items-center justify-center">
                                 <img
-                                    src="/bottle-3d.gif"
+                                    src="/Garrafas-GT/bottle-3d.gif"
                                     alt="Garrafa PET 3D - Plásticos GT"
                                     className="w-full h-full object-contain animate-float"
                                     onError={(e) => {

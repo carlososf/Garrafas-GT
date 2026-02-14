@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -56,22 +55,18 @@ export default function Header() {
                             }}
                         >
                             {/* Logo for GREEN background (white version) */}
-                            <Image
-                                src="/logo-white.png"
+                            <img
+                                src="/Garrafas-GT/logo-white.png"
                                 alt="Plásticos GT - Qualidade que molda o futuro"
-                                fill
-                                className={`object-contain transition-opacity duration-300 ${isScrolled ? 'opacity-0' : 'opacity-100'
+                                className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-0' : 'opacity-100'
                                     }`}
-                                priority
                             />
                             {/* Logo for WHITE background (color version) */}
-                            <Image
-                                src="/logo-color.png"
+                            <img
+                                src="/Garrafas-GT/logo-color.png"
                                 alt="Plásticos GT - Qualidade que molda o futuro"
-                                fill
-                                className={`object-contain transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'
+                                className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-100' : 'opacity-0'
                                     }`}
-                                priority
                             />
                         </div>
                         <div className="hidden sm:block">
