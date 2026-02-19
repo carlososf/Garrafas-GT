@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/utils';
 
 interface Product {
     id: number;
@@ -239,7 +240,7 @@ export default function Catalog() {
                             {product.image ? (
                                 <div className="absolute inset-0 p-6 flex items-center justify-center">
                                     <Image
-                                        src={product.image}
+                                        src={getImagePath(product.image)}
                                         alt={product.name}
                                         width={300}
                                         height={300}
