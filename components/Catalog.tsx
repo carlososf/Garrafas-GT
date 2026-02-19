@@ -322,10 +322,7 @@ export default function Catalog() {
                         style={{ animationDelay: `${index * 0.1}s` }}
                     >
                         {/* Product Image */}
-                        <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-40 h-40 bg-primary-500 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
-                            </div>
+                        <div className="relative h-64 bg-[#fafafa] overflow-hidden">
 
                             {/* Image Render */}
                             {product.image ? (
