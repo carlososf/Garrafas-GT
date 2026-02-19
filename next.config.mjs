@@ -2,7 +2,7 @@
 const nextConfig = {
     output: 'export',
     trailingSlash: true,
-    basePath: process.env.NODE_ENV === 'production' ? '/Garrafas-GT' : '',
+
     images: {
         unoptimized: true, // Necessário para static export
         formats: ['image/webp', 'image/avif'],
