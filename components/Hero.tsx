@@ -96,8 +96,8 @@ export default function Hero() {
                         <div className="relative w-full h-[450px] flex items-center justify-center -mt-12">
                             <div className="relative w-full h-full flex items-center justify-center">
                                 <img
-                                    src={getImagePath('/bottle-3d.gif')}
-                                    alt="Garrafa PET 3D - Plásticos GT"
+                                    src={getImagePath('/garrafas flutuando.png')}
+                                    alt="Garrafas Plásticas GT - Qualidade que molda"
                                     className="w-full h-full object-contain animate-float"
                                     onError={(e) => {
                                         // Fallback if GIF not found
