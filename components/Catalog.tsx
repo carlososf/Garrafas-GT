@@ -86,17 +86,7 @@ const products: Product[] = [
         image: '/products/frasco-1l.jpg',
         description: 'Frasco de 1 Litro modelo Index.',
     },
-    {
-        id: 10,
-        name: 'Frasco 500 ml (Girafa)',
-        category: 'Frascos',
-        material: 'PEAD',
-        volumes: ['500ml'],
-        lid: 'Rosca R28/410',
-        colors: ['A combinar'],
-        image: '/products/frasco-500ml-girafa.jpg',
-        description: 'Modelo Girafa com design diferenciado.',
-    },
+
     {
         id: 14,
         name: 'Frasco 100 ml',
