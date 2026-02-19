@@ -10,7 +10,6 @@ export default function Footer() {
         empresa: [
             { label: 'Sobre Nós', href: '#institucional' },
             { label: 'Diferenciais', href: '#diferenciais' },
-            { label: 'Certificações', href: '#institucional' },
             { label: 'Sustentabilidade', href: '#institucional' },
         ],
         produtos: [

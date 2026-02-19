@@ -54,28 +54,6 @@ const products: Product[] = [
 
     // FRASCOS
     {
-        id: 4,
-        name: 'Frasco 10 ml (Óleo Ungido)',
-        category: 'Frascos',
-        material: 'PEAD',
-        volumes: ['10ml'],
-        lid: 'Padrão',
-        colors: ['Branco', 'Transparente'],
-        image: '/products/frasco-10ml.jpg',
-        description: 'Frasco pequeno para óleo ungido e amostras.',
-    },
-    {
-        id: 5,
-        name: 'Frasco 120 ml',
-        category: 'Frascos',
-        material: 'PEAD',
-        volumes: ['120ml'],
-        lid: 'Padrão',
-        colors: ['Branco', 'Transparente'],
-        image: '/products/frasco-120ml.jpg',
-        description: 'Frasco versátil de 120ml em PEAD.',
-    },
-    {
         id: 6,
         name: 'Frasco 300 ml (Index)',
         category: 'Frascos',
@@ -85,17 +63,6 @@ const products: Product[] = [
         colors: ['Branco', 'Transparente'],
         image: '/products/frasco-300ml.jpg',
         description: 'Modelo Index com rosca R24/415.',
-    },
-    {
-        id: 7,
-        name: 'Frasco 400 ml',
-        category: 'Frascos',
-        material: 'PEAD',
-        volumes: ['400ml'],
-        lid: 'Rosca R28/410',
-        colors: ['Branco', 'Transparente'],
-        image: '', // Imagem pendente
-        description: 'Frasco de 400ml com rosca R28/410.',
     },
     {
         id: 8,
@@ -153,17 +120,6 @@ const products: Product[] = [
         colors: ['Personalizado'],
         image: '/products/cera.jpg',
         description: 'Desenvolvido para ceras depilatórias e automotivas.',
-    },
-    {
-        id: 13,
-        name: 'Pote para Shimeji',
-        category: 'Projetos Especiais',
-        material: 'PP',
-        volumes: ['Sob Consulta'],
-        lid: 'Sem Tampa',
-        colors: ['Transparente'],
-        image: '/products/shimeji.jpg',
-        description: 'Embalagem ideal para cogumelos Shimeji.',
     },
 ];
 

@@ -168,30 +168,7 @@ export default function Differentials() {
                 ))}
             </div>
 
-            {/* Certifications Section */}
-            <div className="mt-16 pt-16 border-t border-gray-200">
-                <h3 className="text-3xl font-bold text-gray-900 text-center mb-12 font-display">
-                    Certificações e <span className="gradient-text">Qualidade</span>
-                </h3>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    {[
-                        { icon: '✅', title: 'ISO 9001', subtitle: 'Gestão de Qualidade' },
-                        { icon: '🌿', title: 'ISO 14001', subtitle: 'Gestão Ambiental' },
-                        { icon: '🔒', title: 'ANVISA', subtitle: 'Aprovado' },
-                        { icon: '🏆', title: 'INMETRO', subtitle: 'Certificado' },
-                    ].map((cert, index) => (
-                        <div
-                            key={index}
-                            className="glass rounded-2xl p-6 text-center hover:shadow-xl hover:scale-105 transition-all duration-300"
-                        >
-                            <div className="text-4xl mb-3">{cert.icon}</div>
-                            <h4 className="font-bold text-gray-900 mb-1">{cert.title}</h4>
-                            <p className="text-sm text-gray-600">{cert.subtitle}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            {/* Removed Certifications Section as per user request */}
 
             {/* CTA Section */}
             <div className="mt-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
