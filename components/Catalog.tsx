@@ -132,6 +132,17 @@ const products: Product[] = [
         description: 'Frasco cilíndrico de 355ml.',
     },
     {
+        id: 26,
+        name: 'Cilindro 300 ml',
+        category: 'Frascos',
+        material: 'PEAD',
+        volumes: ['300ml'],
+        lid: 'Gargalo 18',
+        colors: ['A combinar'],
+        image: '/products/cilindro 300ml.png',
+        description: 'Frasco cilíndrico de 300ml.',
+    },
+    {
         id: 18,
         name: 'Girafa 70 ml',
         category: 'Frascos',
