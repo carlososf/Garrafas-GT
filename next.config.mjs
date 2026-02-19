@@ -2,7 +2,6 @@
 const nextConfig = {
     output: 'export',
     basePath: process.env.NODE_ENV === 'production' ? '/GARRAFAS-GT' : '',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/GARRAFAS-GT' : '',
     images: {
         unoptimized: true, // Necessário para static export
         formats: ['image/webp', 'image/avif'],
