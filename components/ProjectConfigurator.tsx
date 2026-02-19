@@ -75,7 +75,7 @@ ${config.observations || 'Nenhuma observação adicional'}
 
         // Send to WhatsApp
         const message = encodeURIComponent(summary);
-        window.open(`https://wa.me/5511972362554?text=${message}`, '_blank');
+        window.open(`https://wa.me/5511994643577?text=${message}`, '_blank');
 
         // Reset form
         setConfig({

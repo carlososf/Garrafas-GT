@@ -16,19 +16,19 @@ export default function Institutional() {
 
     const timeline = [
         {
-            year: '1998',
+            year: '2013',
             title: 'Fundação',
-            description: 'Início das atividades com foco em embalagens sopradas.',
+            description: 'Início das atividades com foco em qualidade e inovação.',
         },
         {
-            year: '2012',
+            year: '2018',
             title: 'Expansão',
-            description: 'Ampliação do portfólio para múltiplos segmentos.',
+            description: 'Ampliação da linha de produtos e modernização da fábrica.',
         },
         {
-            year: '2026',
-            title: 'Inovação',
-            description: 'Liderança em soluções personalizadas B2B.',
+            year: '2024',
+            title: 'Liderança',
+            description: 'Referência em soluções personalizadas e sustentáveis.',
         },
     ];
 

@@ -16,172 +16,157 @@ interface Product {
 }
 
 const products: Product[] = [
-    // BALDES INDUSTRIAIS - LINHA REDONDA
+    // POTES
     {
         id: 1,
-        name: 'Balde Industrial 2,2 Litros',
-        category: 'Baldes Redondos',
-        material: 'PP / PEAD',
-        volumes: ['2,2L'],
-        lid: 'Tampa com Lacre',
-        colors: ['Branco', 'Transparente', 'Colorido'],
-        image: '/products/balde-2l.webp',
-        description: 'Compacto, ideal para amostras ou produtos de varejo. Perfeito para pequenos volumes.',
+        name: 'Pote de 1kg',
+        category: 'Potes',
+        material: 'PEAD',
+        volumes: ['1kg'],
+        lid: 'Diâmetro 102mm',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/pote-1kg.jpg',
+        description: 'Pote resistente em PEAD com tampa de 102mm.',
     },
     {
         id: 2,
-        name: 'Balde Industrial 3,2 Litros',
-        category: 'Baldes Redondos',
-        material: 'PP',
-        volumes: ['3,2L'],
-        lid: 'Tampa Rosca Lacre',
+        name: 'Pote de 500 gr',
+        category: 'Potes',
+        material: 'PEAD',
+        volumes: ['500g'],
+        lid: 'Diâmetro 92mm',
         colors: ['Branco', 'Transparente'],
-        image: '/products/balde-3l.webp',
-        description: 'Muito utilizado no setor alimentício (sorvetes, doces). Aprovado para contato com alimentos.',
+        image: '/products/pote-500g.jpg',
+        description: 'Pote de 500g em PEAD, ideal para diversos produtos.',
     },
     {
         id: 3,
-        name: 'Balde Industrial 3,6 Litros',
-        category: 'Baldes Redondos',
+        name: 'Pote de 250 gr',
+        category: 'Potes',
         material: 'PEAD',
-        volumes: ['3,6L'],
-        lid: 'Tampa Rosca Reforçada',
-        colors: ['Branco', 'Colorido'],
-        image: '/products/balde-3-6l.webp',
-        description: 'Padrão para tintas e massas menores. Alta resistência química.',
+        volumes: ['250g'],
+        lid: 'Diâmetro 92mm',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/pote-250g.jpg',
+        description: 'Pote compacto de 250g em PEAD.',
     },
+
+    // FRASCOS
     {
         id: 4,
-        name: 'Balde Industrial 12 Litros',
-        category: 'Baldes Redondos',
+        name: 'Frasco 10 ml (Óleo Ungido)',
+        category: 'Frascos',
         material: 'PEAD',
-        volumes: ['12L'],
-        lid: 'Tampa Rosca com Lacre',
-        colors: ['Branco', 'Azul', 'Verde'],
-        image: '/products/balde-12l.webp',
-        description: 'Intermediário para produtos químicos e construção civil. Alça em plástico resistente.',
+        volumes: ['10ml'],
+        lid: 'Padrão',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/frasco-10ml.jpg',
+        description: 'Frasco pequeno para óleo ungido e amostras.',
     },
     {
         id: 5,
-        name: 'Balde Industrial 18 Litros',
-        category: 'Baldes Redondos',
+        name: 'Frasco 120 ml',
+        category: 'Frascos',
         material: 'PEAD',
-        volumes: ['18L'],
-        lid: 'Tampa Rosca / Sobre-tampa',
-        colors: ['Branco', 'Transparente', 'Colorido'],
-        image: '/products/balde-18l.webp',
-        description: 'Padrão de mercado para tintas, óleos e grandes volumes de alimentos. Alça metálica opcional.',
+        volumes: ['120ml'],
+        lid: 'Padrão',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/frasco-120ml.jpg',
+        description: 'Frasco versátil de 120ml em PEAD.',
     },
     {
         id: 6,
-        name: 'Balde Industrial 20 Litros',
-        category: 'Baldes Redondos',
-        material: 'PEAD Reforçado',
-        volumes: ['20L'],
-        lid: 'Tampa Reforçada com Lacre',
-        colors: ['Branco', 'Azul'],
-        image: '/products/balde-20l.webp',
-        description: 'Reforçado para transporte logístico pesado. Máxima resistência e durabilidade.',
+        name: 'Frasco 300 ml (Index)',
+        category: 'Frascos',
+        material: 'PEAD',
+        volumes: ['300ml'],
+        lid: 'Rosca R24/415',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/frasco-300ml.jpg',
+        description: 'Modelo Index com rosca R24/415.',
     },
-
-    // BALDES INDUSTRIAIS - LINHA RETANGULAR
     {
         id: 7,
-        name: 'Balde Retangular 4 Litros',
-        category: 'Baldes Retangulares',
+        name: 'Frasco 400 ml',
+        category: 'Frascos',
         material: 'PEAD',
-        volumes: ['4L'],
-        lid: 'Tampa Rosca',
-        colors: ['Branco', 'Azul', 'Verde'],
-        image: '/products/balde-ret-4l.webp',
-        description: 'Comum para produtos de limpeza ou químicos específicos. Otimizado para empilhamento.',
+        volumes: ['400ml'],
+        lid: 'Rosca R28/410',
+        colors: ['Branco', 'Transparente'],
+        image: '', // Imagem pendente
+        description: 'Frasco de 400ml com rosca R28/410.',
     },
     {
         id: 8,
-        name: 'Balde Retangular 20 Litros',
-        category: 'Baldes Retangulares',
-        material: 'PEAD Reforçado',
-        volumes: ['20L'],
-        lid: 'Tampa com Sobre-tampa',
-        colors: ['Branco', 'Azul'],
-        image: '/products/balde-ret-20l.webp',
-        description: 'Maximiza o empilhamento em pallets. Design pensado para otimização de espaço em estoques.',
+        name: 'Frasco 500 ml (Index)',
+        category: 'Frascos',
+        material: 'PEAD',
+        volumes: ['500ml'],
+        lid: 'Rosca R28/410',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/frasco-500ml-index.jpg',
+        description: 'Modelo Index de 500ml, muito popular.',
     },
-
-    // POTES E FRASCOS - LINHA DE INJEÇÃO
     {
         id: 9,
-        name: 'Pote Hermético (Vários Tamanhos)',
-        category: 'Potes e Frascos',
-        material: 'PP',
-        volumes: ['250ml', '500ml', '1L', '2L'],
-        lid: 'Tampa com Lacre de Segurança',
-        colors: ['Transparente', 'Branco'],
-        image: '/products/pote-hermetico.webp',
-        description: 'Sistema de lacre que garante que o produto não foi violado. Ideal para alimentos e farmacêuticos.',
+        name: 'Frasco 1 Litro (Index)',
+        category: 'Frascos',
+        material: 'PEAD',
+        volumes: ['1L'],
+        lid: 'Rosca R28/410',
+        colors: ['Branco', 'Transparente'],
+        image: '/products/frasco-1l.jpg',
+        description: 'Frasco de 1 Litro modelo Index.',
     },
     {
         id: 10,
-        name: 'Frasco de Boca Larga',
-        category: 'Potes e Frascos',
-        material: 'PP / PEAD',
-        volumes: ['500ml', '1L', '2L'],
-        lid: 'Tampa Rosca Larga',
-        colors: ['Transparente', 'Branco', 'Âmbar'],
-        image: '/products/frasco-boca-larga.webp',
-        description: 'Facilitam o envase de pastosos, pós e grãos. Abertura ampla para fácil manuseio.',
-    },
-
-    // TAMPAS E FECHAMENTOS
-    {
-        id: 11,
-        name: 'Tampa com Lacre de Segurança',
-        category: 'Tampas e Fechamentos',
-        material: 'PP',
-        volumes: ['Universal'],
-        lid: 'Seal - Lacre Inviolável',
-        colors: ['Branco', 'Preto', 'Colorido'],
-        image: '/products/tampa-lacre.webp',
-        description: 'O bocal quebra ao abrir pela primeira vez. Máxima segurança contra violação.',
-    },
-    {
-        id: 12,
-        name: 'Tampa com Sobre-tampa',
-        category: 'Tampas e Fechamentos',
-        material: 'PP',
-        volumes: ['Universal'],
-        lid: 'Sistema Duplo',
+        name: 'Frasco 500 ml (Girafa)',
+        category: 'Frascos',
+        material: 'PEAD',
+        volumes: ['500ml'],
+        lid: 'Rosca R28/410',
         colors: ['Branco', 'Transparente'],
-        image: '/products/tampa-sobre.webp',
-        description: 'Para maior proteção contra vazamentos. Sistema de dupla vedação.',
-    },
-    {
-        id: 13,
-        name: 'Tampa para Bico Dosador',
-        category: 'Tampas e Fechamentos',
-        material: 'PP',
-        volumes: ['Universal'],
-        lid: 'Bico Dosador',
-        colors: ['Branco', 'Preto'],
-        image: '/products/tampa-dosador.webp',
-        description: 'Utilizadas em baldes de lubrificantes e óleos. Dosagem precisa e controlada.',
+        image: '/products/frasco-500ml-girafa.jpg',
+        description: 'Modelo Girafa com design diferenciado.',
     },
 
     // PROJETOS ESPECIAIS
     {
-        id: 14,
-        name: 'Projeto Customizado',
+        id: 11,
+        name: 'Bola de Sorvete 60gr',
         category: 'Projetos Especiais',
-        material: 'PP / PEAD / PET',
-        volumes: ['Sob Medida'],
-        lid: 'Personalizado',
-        colors: ['Todas as Cores'],
-        image: '/products/custom-project.webp',
-        description: 'Desenvolvimento de moldes exclusivos. Design único para sua marca com IML ou Serigrafia.',
+        material: 'PP',
+        volumes: ['60g'],
+        lid: 'Encaixe',
+        colors: ['Variadas'],
+        image: '/products/bola-sorvete.jpg',
+        description: 'Embalagem formato bola para sorvetes.',
+    },
+    {
+        id: 12,
+        name: 'Embalagem para Cera',
+        category: 'Projetos Especiais',
+        material: 'Resistente ao Calor',
+        volumes: ['Sob Consulta'],
+        lid: 'Padrão',
+        colors: ['Personalizado'],
+        image: '/products/cera.jpg',
+        description: 'Desenvolvido para ceras depilatórias e automotivas.',
+    },
+    {
+        id: 13,
+        name: 'Pote para Shimeji',
+        category: 'Projetos Especiais',
+        material: 'PP',
+        volumes: ['Sob Consulta'],
+        lid: 'Sem Tampa',
+        colors: ['Transparente'],
+        image: '/products/shimeji.jpg',
+        description: 'Embalagem ideal para cogumelos Shimeji.',
     },
 ];
 
-const categories = ['Todos', 'Baldes Redondos', 'Baldes Retangulares', 'Potes e Frascos', 'Tampas e Fechamentos', 'Projetos Especiais'];
+const categories = ['Todos', 'Potes', 'Frascos', 'Projetos Especiais'];
 
 export default function Catalog() {
     const [selectedCategory, setSelectedCategory] = useState('Todos');
@@ -249,11 +234,38 @@ export default function Catalog() {
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="w-40 h-40 bg-primary-500 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
                             </div>
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-6xl">📦</div>
-                            </div>
+
+                            {/* Image Render */}
+                            {product.image ? (
+                                <div className="absolute inset-0 p-6 flex items-center justify-center">
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        width={300}
+                                        height={300}
+                                        className="object-contain w-full h-full drop-shadow-xl group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) => {
+                                            // Fallback to emoji if image fails
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            const parent = target.parentElement?.parentElement;
+                                            if (parent) {
+                                                const fallback = document.createElement('div');
+                                                fallback.className = 'absolute inset-0 flex items-center justify-center';
+                                                fallback.innerHTML = '<div class="text-6xl">📦</div>';
+                                                parent.appendChild(fallback);
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="text-6xl">📦</div>
+                                </div>
+                            )}
+
                             {/* Category Badge */}
-                            <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full">
+                            <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full z-10">
                                 <span className="text-xs font-semibold text-primary-600">{product.category}</span>
                             </div>
                         </div>
@@ -301,7 +313,7 @@ export default function Catalog() {
                             <button
                                 onClick={() => {
                                     const message = `Olá! Gostaria de solicitar um orçamento para: ${product.name}`;
-                                    window.open(`https://wa.me/5511972362554?text=${encodeURIComponent(message)}`, '_blank');
+                                    window.open(`https://wa.me/5511994643577?text=${encodeURIComponent(message)}`, '_blank');
                                 }}
                                 className="w-full btn-primary text-sm py-3"
                             >

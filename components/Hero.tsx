@@ -124,7 +124,7 @@ export default function Hero() {
                         {/* Stats - Below Bottle with Float Animation */}
                         <div className="grid grid-cols-2 gap-4 mt-6 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                             {[
-                                { value: '25+', label: 'Anos de Experiência', delay: '0s' },
+                                { value: 'Desde', label: '2013 no Mercado', delay: '0s' },
                                 { value: '500+', label: 'Projetos Entregues', delay: '0.2s' },
                                 { value: '100%', label: 'Ferramentaria Própria', delay: '0.4s' },
                                 { value: '24h', label: 'Atendimento Ágil', delay: '0.6s' },

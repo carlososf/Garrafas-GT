@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
 
     const handleClick = () => {
         const message = 'Olá! Gostaria de saber mais sobre as soluções da Plásticos GT.';
-        window.open(`https://wa.me/5511972362554?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/5511994643577?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     return (

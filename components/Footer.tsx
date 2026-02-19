@@ -28,7 +28,7 @@ export default function Footer() {
         contato: [
             { label: 'Fale Conosco', href: '#contato' },
             { label: 'Solicitar Orçamento', href: '#contato' },
-            { label: 'WhatsApp', href: 'https://wa.me/5511999999999' },
+            { label: 'WhatsApp', href: 'https://wa.me/5511994643577' },
             { label: 'Email', href: 'mailto:contato@plasticosgt.com.br' },
         ],
     };

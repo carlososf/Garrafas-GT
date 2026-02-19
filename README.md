@@ -76,8 +76,7 @@ npm install
 
 ### Desenvolvimento
 ```bash
-npm run dev
-```
+, NESSA```
 
 Acesse: `http://localhost:3000`
 
