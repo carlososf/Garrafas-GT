@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
+    basePath: '/Garrafas-GT',
+    assetPrefix: '/Garrafas-GT/',
     trailingSlash: true,
 
     images: {

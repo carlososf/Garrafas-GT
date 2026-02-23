@@ -10,149 +10,84 @@ export default function Hero() {
         const handleScroll = () => {
             const scrolled = window.scrollY;
             if (heroRef.current) {
-                heroRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroRef.current.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
-        <section id="home" className="relative flex items-center justify-center overflow-hidden py-4">
-            {/* Animated Background */}
-            <div
-                ref={heroRef}
-                className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-500 to-primary-700"
-            >
-                {/* Animated circles */}
-                <div className="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-            </div>
+        <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-20">
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-900/5 -skew-x-12 transform origin-top-right hidden lg:block"></div>
 
-            {/* Content - Two Column Layout */}
-            <div className="relative z-10 section-container w-full">
-                {/* LOGO GRANDE CENTRALIZADA - Fixa, sem animações */}
-                <div className="flex justify-center mb-6 mt-2">
-                    <div
-                        className="relative animate-fade-in-up"
-                        style={{
-                            width: 'var(--logo-hero-width)',
-                            height: 'var(--logo-hero-height)'
-                        }}
-                    >
-                        <img
-                            src={getImagePath('/logo-white.png')}
-                            alt="Plásticos GT - Qualidade que molda o futuro"
-                            className="w-full h-full object-contain drop-shadow-2xl"
-                        />
-                    </div>
-                </div>
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-
-                    {/* LEFT COLUMN - Text Content */}
-                    <div className="space-y-4 text-left">
-                        {/* Badge */}
-                        <div className="inline-flex items-center space-x-2 glass-dark px-6 py-3 rounded-full animate-fade-in-up">
-                            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                            <span className="text-white text-sm font-medium">Ferramentaria Própria • Projetos Customizados</span>
+                    {/* LEFT CONTENT: MASSIVE TYPOGRAPHY */}
+                    <div className="lg:col-span-8 flex flex-col justify-center">
+                        <div className="inline-flex items-center gap-3 mb-8 animate-fade-in">
+                            <span className="w-12 h-[1px] bg-primary-500"></span>
+                            <span className="text-primary-600 font-bold uppercase tracking-[0.2em] text-xs">
+                                Industrial Excellence Since 2013
+                            </span>
                         </div>
 
-                        {/* Main Heading */}
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in-up font-display" style={{ animationDelay: '0.2s' }}>
-                            Soluções em Embalagens Sopradas
-                            <br />
-                            <span className="text-green-200">Qualidade que Molda o Futuro</span>
+                        <h1 className="text-[clamp(3rem,8vw,7rem)] leading-[0.85] mb-8 animate-slide-up">
+                            Qualidade <br />
+                            <span className="text-primary-500">que molda</span> <br />
+                            o futuro.
                         </h1>
 
-                        {/* Subheading */}
-                        <p className="text-lg sm:text-xl text-green-50 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            Frascos e potes plásticos de alta performance para cosméticos, alimentos, higiene e limpeza.
-                            Desenvolvemos projetos sob medida com nossa ferramentaria própria.
+                        <p className="max-w-xl text-lg text-gray-600 mb-12 animate-slide-up [animation-delay:200ms]">
+                            Soluções premium em embalagens plásticas personalizadas.
+                            Engenharia de precisão com ferramentaria própria para resultados excepcionais.
                         </p>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row items-start gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                            <a
-                                href="#catalogo"
-                                className="btn-primary bg-white text-primary-600 hover:bg-gray-50 w-full sm:w-auto"
-                            >
-                                <span className="relative z-10">Explorar Catálogo</span>
+                        <div className="flex flex-wrap gap-6 animate-slide-up [animation-delay:400ms]">
+                            <a href="#catalogo" className="group relative px-10 py-5 bg-primary-500 text-white font-bold uppercase tracking-wider overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,160,78,0.3)]">
+                                <span className="relative z-10">Explorar Portfólio</span>
+                                <div className="absolute inset-0 bg-primary-600 transform translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
                             </a>
-                            <a
-                                href="#configurador"
-                                className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50 hover:shadow-xl active:scale-95 w-full sm:w-auto text-center"
-                            >
-                                Configurar Projeto Especial
+
+                            <a href="#configurador" className="group flex items-center gap-4 px-6 py-5 font-bold uppercase tracking-wider text-black transition-colors hover:text-primary-600">
+                                <span>Configurar Projeto</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="transform transition-transform duration-300 group-hover:translateX-2">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
                             </a>
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN - 3D Bottle GIF + Stats Below */}
-                    <div className="relative animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                        {/* Bottle GIF - Moved up slightly */}
-                        <div className="relative w-full h-[450px] flex items-center justify-center -mt-12">
-                            <div className="relative w-full h-full flex items-center justify-center">
-                                <img
-                                    src={getImagePath('/garrafas flutuando.png')}
-                                    alt="Garrafas Plásticas GT - Qualidade que molda"
-                                    className="w-full h-full object-contain animate-float"
-                                    onError={(e) => {
-                                        // Fallback if GIF not found
-                                        e.currentTarget.style.display = 'none';
-                                        const parent = e.currentTarget.parentElement;
-                                        if (parent) {
-                                            parent.innerHTML = `
-                        <div class="text-center p-12">
-                          <div class="text-9xl mb-6 animate-float">🍾</div>
-                          <p class="text-white text-2xl font-semibold mb-2">Garrafa PET 3D</p>
-                          <p class="text-green-200">Adicione seu GIF em: /public/bottle-3d.gif</p>
-                        </div>
-                      `;
-                                        }
-                                    }}
-                                />
-                            </div>
-
-                            {/* Decorative elements around the bottle */}
-                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl animate-pulse"></div>
-                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-300 opacity-10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    {/* RIGHT CONTENT: OVERLAPPING IMAGE */}
+                    <div className="lg:col-span-4 relative mt-12 lg:mt-0">
+                        <div className="relative z-20 transform lg:-translate-x-20 animate-float">
+                            <img
+                                src={getImagePath('/garrafas flutuando.png')}
+                                alt="Garrafas Plásticas GT"
+                                className="w-full max-w-[500px] mx-auto drop-shadow-[0_50px_100px_rgba(0,0,0,0.15)]"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    const parent = e.currentTarget.parentElement;
+                                    if (parent) parent.innerHTML = '<div class="text-[10rem] opacity-20">GT</div>';
+                                }}
+                            />
                         </div>
 
-                        {/* Stats - Below Bottle with Float Animation */}
-                        <div className="grid grid-cols-2 gap-4 mt-6 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-                            {[
-                                { value: 'Desde', label: '2013 no Mercado', delay: '0s' },
-                                { value: '500+', label: 'Projetos Entregues', delay: '0.2s' },
-                                { value: '100%', label: 'Ferramentaria Própria', delay: '0.4s' },
-                                { value: '24h', label: 'Atendimento Ágil', delay: '0.6s' },
-                            ].map((stat, index) => (
-                                <div
-                                    key={index}
-                                    className="glass-dark rounded-2xl p-6 hover:scale-105 transition-transform duration-300 animate-float"
-                                    style={{ animationDelay: stat.delay }}
-                                >
-                                    <div className="text-4xl font-bold text-white font-display">{stat.value}</div>
-                                    <div className="text-green-200 text-sm mt-2">{stat.label}</div>
-                                </div>
-                            ))}
+                        {/* Floating Stats */}
+                        <div className="absolute -bottom-10 -right-10 glass p-8 rounded-2xl shadow-2xl animate-slide-up [animation-delay:600ms] hidden xl:block">
+                            <div className="text-4xl font-black text-primary-500">500+</div>
+                            <div className="text-xs uppercase font-bold tracking-widest text-gray-500 mt-1">Projetos Ativos</div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-                <a href="#catalogo" className="flex flex-col items-center text-white hover:text-green-200 transition-colors duration-300">
-                    <span className="text-sm mb-2">Descubra mais</span>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                </a>
-            </div>
+            {/* Background elements */}
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+
+            <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary-100 rounded-full blur-[120px] opacity-50 -z-10 animate-pulse"></div>
         </section>
     );
 }
