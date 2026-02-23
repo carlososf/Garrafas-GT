@@ -177,14 +177,14 @@ const products: Product[] = [
     },
     {
         id: 21,
-        name: 'Frasco Oval 500 ml',
+        name: 'Frasco Oval 200 ml',
         category: 'Frascos',
         material: 'PEAD',
-        volumes: ['500ml'],
-        lid: 'Gargalo 28/410',
+        volumes: ['200ml'],
+        lid: 'Gargalo 24/415',
         colors: ['A combinar'],
         image: '/products/shampoo.png',
-        description: 'Frasco para Shampoo de 500ml.',
+        description: 'Frasco para Shampoo de 200ml.',
     },
 
     // BISNAGAS
