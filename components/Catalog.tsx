@@ -51,6 +51,8 @@ const products: Product[] = [
         image: '/products/pote-250g.jpg',
         description: 'Pote compacto de 250g em PEAD.',
     },
+
+    // FRASCOS
     {
         id: 6,
         name: 'Frasco 300 ml (Index)',
@@ -84,6 +86,7 @@ const products: Product[] = [
         image: '/products/frasco-1l.jpg',
         description: 'Frasco de 1 Litro modelo Index.',
     },
+
     {
         id: 14,
         name: 'Frasco 100 ml',
@@ -183,6 +186,8 @@ const products: Product[] = [
         image: '/products/shampoo.png',
         description: 'Frasco para Shampoo de 500ml.',
     },
+
+    // BISNAGAS
     {
         id: 22,
         name: 'Bisnaga 30g',
@@ -227,6 +232,8 @@ const products: Product[] = [
         image: '/products/bisnaga 60g.png',
         description: 'Bisnaga flexível de 60g.',
     },
+
+    // PROJETOS ESPECIAIS
     {
         id: 11,
         name: 'Bola de Sorvete 60gr',
@@ -268,88 +275,166 @@ export default function Catalog() {
             }
             setIsAnimating(false);
         }, 300);
+
         return () => clearTimeout(timer);
     }, [selectedCategory]);
 
     return (
-        <section id="catalogo" className="bg-gray-50 py-[var(--section-padding)]">
-            <div className="container mx-auto px-6">
+        <section id="catalogo" className="section-container bg-gray-50">
+            <div className="text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                    Nosso Catálogo
+                </span>
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 font-display">
+                    Soluções para Cada <span className="gradient-text">Segmento</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Embalagens plásticas de alta qualidade, desenvolvidas com tecnologia de ponta
+                    e adaptadas às necessidades específicas do seu negócio.
+                </p>
+            </div>
 
-                {/* HEADER */}
-                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
-                    <div className="max-w-2xl">
-                        <span className="text-primary-600 font-bold uppercase tracking-[0.3em] text-xs mb-8 block">
-                            Our Portfolio
-                        </span>
-                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] leading-[0.9] font-black uppercase">
-                            Soluções <br />
-                            <span className="text-gray-300">para cada</span> <br />
-                            segmento.
-                        </h2>
-                    </div>
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${selectedCategory === category
+                            ? 'bg-primary-500 text-white shadow-lg scale-105'
+                            : 'bg-white text-gray-700 hover:bg-gray-100 hover:scale-105'
+                            }`}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
 
-                    <div className="flex flex-wrap gap-2">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setSelectedCategory(cat)}
-                                className={`px-6 py-3 text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${selectedCategory === cat
-                                        ? 'bg-black text-white border-black'
-                                        : 'bg-transparent text-gray-400 border-gray-200 hover:border-black hover:text-black'
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+            {/* Products Grid */}
+            <div
+                className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isAnimating ? 'opacity-50' : 'opacity-100'
+                    }`}
+            >
+                {filteredProducts.map((product, index) => (
+                    <div
+                        key={product.id}
+                        className="product-card group"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                        {/* Product Image */}
+                        <div className="relative h-64 bg-[#fafafa] overflow-hidden">
 
-                {/* GRID */}
-                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                    {filteredProducts.map((product) => (
-                        <div key={product.id} className="group bg-white border border-gray-100 p-8 flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                            <div className="aspect-square bg-gray-50 mb-8 flex items-center justify-center relative overflow-hidden">
-                                <img
-                                    src={getImagePath(product.image)}
-                                    alt={product.name}
-                                    className="w-full h-full object-contain p-8 mix-blend-multiply transition-transform duration-700 group-hover:scale-110"
-                                    onError={(e) => {
-                                        e.currentTarget.style.display = 'none';
-                                        e.currentTarget.parentElement!.innerHTML = '<div class="text-6xl opacity-10 font-black">GT</div>';
-                                    }}
-                                />
-                                <div className="absolute top-4 left-4 bg-black text-white text-[8px] font-black uppercase tracking-widest px-3 py-1">
-                                    {product.category}
+                            {/* Image Render */}
+                            {product.image ? (
+                                <div className="absolute inset-0 p-6 flex items-center justify-center">
+                                    <Image
+                                        src={getImagePath(product.image)}
+                                        alt={product.name}
+                                        width={300}
+                                        height={300}
+                                        className="object-contain w-full h-full drop-shadow-xl group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) => {
+                                            // Fallback to emoji if image fails
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            const parent = target.parentElement?.parentElement;
+                                            if (parent) {
+                                                const fallback = document.createElement('div');
+                                                fallback.className = 'absolute inset-0 flex items-center justify-center';
+                                                fallback.innerHTML = '<div class="text-6xl">📦</div>';
+                                                parent.appendChild(fallback);
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="text-6xl">📦</div>
+                                </div>
+                            )}
+
+                            {/* Category Badge */}
+                            <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full z-10">
+                                <span className="text-xs font-semibold text-primary-600">{product.category}</span>
+                            </div>
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="p-6">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                                {product.name}
+                            </h3>
+                            <p className="text-gray-600 text-sm mb-4">{product.description}</p>
+
+                            {/* Specifications */}
+                            <div className="space-y-2 mb-4">
+                                <div className="flex items-start">
+                                    <span className="text-primary-500 mr-2">🔹</span>
+                                    <div className="text-sm">
+                                        <span className="font-semibold text-gray-700">Material:</span>
+                                        <span className="text-gray-600 ml-1">{product.material}</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <span className="text-primary-500 mr-2">🔹</span>
+                                    <div className="text-sm">
+                                        <span className="font-semibold text-gray-700">Volumes:</span>
+                                        <span className="text-gray-600 ml-1">{product.volumes.join(', ')}</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <span className="text-primary-500 mr-2">🔹</span>
+                                    <div className="text-sm">
+                                        <span className="font-semibold text-gray-700">Tampa:</span>
+                                        <span className="text-gray-600 ml-1">{product.lid}</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <span className="text-primary-500 mr-2">🔹</span>
+                                    <div className="text-sm">
+                                        <span className="font-semibold text-gray-700">Cores:</span>
+                                        <span className="text-gray-600 ml-1">{product.colors.join(', ')}</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <h3 className="text-lg font-black uppercase tracking-tight mb-2 group-hover:text-primary-500 transition-colors">
-                                {product.name}
-                            </h3>
-                            <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-6">
-                                {product.material} • {product.volumes.join(', ')}
-                            </p>
-
+                            {/* CTA Button */}
                             <button
                                 onClick={() => {
                                     const message = `Olá! Gostaria de solicitar um orçamento para: ${product.name}`;
                                     window.open(`https://wa.me/5511994643577?text=${encodeURIComponent(message)}`, '_blank');
                                 }}
-                                className="mt-auto w-full border-t border-gray-100 pt-6 text-[10px] font-black uppercase tracking-[0.2em] text-black transition-colors hover:text-primary-500 flex items-center justify-between"
+                                className="w-full btn-primary text-sm py-3"
                             >
-                                <span>Solicitar Orçamento</span>
-                                <span>→</span>
+                                <span className="relative z-10">Solicitar Orçamento</span>
                             </button>
                         </div>
-                    ))}
-                </div>
-
-                {/* EMPTY STATE */}
-                {filteredProducts.length === 0 && (
-                    <div className="py-32 text-center uppercase font-black text-gray-200 text-4xl">
-                        No items found
                     </div>
-                )}
+                ))}
+            </div>
+
+            {/* No Results */}
+            {filteredProducts.length === 0 && (
+                <div className="text-center py-16">
+                    <div className="text-6xl mb-4">🔍</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Nenhum produto encontrado</h3>
+                    <p className="text-gray-600">Tente selecionar outra categoria</p>
+                </div>
+            )}
+
+            {/* Custom Projects CTA */}
+            <div className="mt-16 glass-green rounded-3xl p-8 md:p-12 text-center">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4 font-display">
+                    Precisa de um Projeto Customizado?
+                </h3>
+                <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                    Desenvolvemos <strong>moldes exclusivos</strong> com nossa ferramentaria própria.
+                    Oferecemos <strong>IML (In-Mould Labeling)</strong> e <strong>Serigrafia</strong> para
+                    criar embalagens únicas para sua marca.
+                </p>
+                <a href="#configurador" className="btn-primary inline-block">
+                    <span className="relative z-10">Solicitar Orçamento Personalizado</span>
+                </a>
             </div>
         </section>
     );

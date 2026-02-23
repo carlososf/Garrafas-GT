@@ -1,68 +1,106 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { getImagePath } from '@/lib/utils';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            const scrollPosition = window.scrollY;
+            const heroHeight = window.innerHeight * 0.8; // Aproximadamente a altura do Hero
+
+            // Navbar só aparece depois do Hero
+            setShowNavbar(scrollPosition > heroHeight);
+
+            // Muda estilo quando rola mais
+            setIsScrolled(scrollPosition > heroHeight + 50);
         };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navItems = [
-        { label: 'Home', href: '#home' },
-        { label: 'Catalogo', href: '#catalogo' },
-        { label: 'Institucional', href: '#institucional' },
-        { label: 'Diferenciais', href: '#diferenciais' },
-        { label: 'Contato', href: '#contato' },
+    const navLinks = [
+        { href: '#home', label: 'Início' },
+        { href: '#catalogo', label: 'Catálogo' },
+        { href: '#diferenciais', label: 'Diferenciais' },
+        { href: '#institucional', label: 'Institucional' },
+        { href: '#configurador', label: 'Projetos Especiais' },
+        { href: '#contato', label: 'Contato' },
     ];
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${!showNavbar
+                ? '-translate-y-full opacity-0'
+                : 'translate-y-0 opacity-100'
+                } ${isScrolled
+                    ? 'glass shadow-lg py-1'
+                    : 'bg-primary-600 py-1'
                 }`}
         >
-            <div className="container mx-auto px-6">
-                <nav className={`relative flex items-center justify-between px-8 py-4 transition-all duration-500 rounded-2xl ${isScrolled ? 'glass shadow-2xl scale-95' : 'bg-transparent'
-                    }`}>
-                    {/* Logo */}
-                    <a href="#home" className="relative z-10 block group">
-                        <img
-                            src={getImagePath('/logo.png')}
-                            alt="Plásticos GT"
-                            className="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
-                            onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                e.currentTarget.parentElement!.innerHTML = '<span class="font-black text-2xl tracking-tighter">PLÁSTICOS <span class="text-primary-500">GT</span></span>';
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between">
+                    {/* Logo - Dual version */}
+                    <Link href="#home" className="flex items-center space-x-2 group">
+                        <div
+                            className="relative transform transition-all duration-300 group-hover:scale-105"
+                            style={{
+                                width: 'var(--logo-navbar-width)',
+                                height: 'var(--logo-navbar-height)',
                             }}
-                        />
-                    </a>
+                        >
+                            {/* Logo for GREEN background (white version) */}
+                            <img
+                                src={getImagePath('/logo-white.png')}
+                                alt="Plásticos GT - Qualidade que molda o futuro"
+                                className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-0' : 'opacity-100'
+                                    }`}
+                            />
+                            {/* Logo for WHITE background (color version) */}
+                            <img
+                                src={getImagePath('/logo-color.png')}
+                                alt="Plásticos GT - Qualidade que molda o futuro"
+                                className={`w-full h-full object-contain transition-opacity duration-300 absolute inset-0 ${isScrolled ? 'opacity-100' : 'opacity-0'
+                                    }`}
+                            />
+                        </div>
+                        <div className="hidden sm:block">
+                            <p className={`text-xs transition-colors duration-300 ${isScrolled ? 'text-gray-600' : 'text-white'}`}>
+                                Qualidade que molda o futuro
+                            </p>
+                        </div>
+                    </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center space-x-12">
-                        {navItems.map((item) => (
+                    <div className="hidden lg:flex items-center space-x-1">
+                        {navLinks.map((link) => (
                             <a
-                                key={item.label}
-                                href={item.href}
-                                className="text-sm font-bold uppercase tracking-widest text-black hover:text-primary-600 transition-colors relative group"
+                                key={link.href}
+                                href={link.href}
+                                className={`px-3 py-1 text-sm font-medium transition-colors duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-primary-500' : 'text-white hover:text-green-200'
+                                    }`}
                             >
-                                {item.label}
-                                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                                {link.label}
+                                <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? 'bg-primary-500' : 'bg-white'
+                                    }`}></span>
                             </a>
                         ))}
                     </div>
 
-                    {/* Desktop CTA */}
+                    {/* CTA Button */}
                     <div className="hidden lg:block">
                         <a
                             href="#contato"
-                            className="px-6 py-3 bg-black text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg transition-all duration-300 hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1"
+                            className={`inline-block text-sm px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 ${isScrolled
+                                ? 'bg-primary-500 text-white hover:bg-primary-600'
+                                : 'bg-white text-primary-600 hover:bg-gray-100'
+                                }`}
                         >
                             Solicitar Orçamento
                         </a>
@@ -70,37 +108,54 @@ export default function Header() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="lg:hidden relative z-10 w-10 h-10 flex flex-col justify-center gap-1.5"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${isScrolled ? 'hover:bg-gray-100' : 'hover:bg-white/10'
+                            }`}
+                        aria-label="Toggle menu"
                     >
-                        <span className={`w-full h-[2px] bg-black transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                        <span className={`w-full h-[2px] bg-black transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                        <span className={`w-full h-[2px] bg-black transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                        <div className="w-6 h-5 flex flex-col justify-between">
+                            <span
+                                className={`w-full h-0.5 transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                                    } ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
+                            ></span>
+                            <span
+                                className={`w-full h-0.5 transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                                    } ${isMobileMenuOpen ? 'opacity-0' : ''}`}
+                            ></span>
+                            <span
+                                className={`w-full h-0.5 transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                                    } ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+                            ></span>
+                        </div>
                     </button>
+                </div>
 
-                    {/* Mobile Navigation Overlay */}
-                    <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl lg:hidden transition-all duration-500 flex flex-col items-center justify-center space-y-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-full'
-                        }`}>
-                        {navItems.map((item) => (
+                {/* Mobile Menu */}
+                <div
+                    className={`lg:hidden overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? 'max-h-96 mt-6' : 'max-h-0'
+                        }`}
+                >
+                    <div className="glass-green rounded-2xl p-6 space-y-3">
+                        {navLinks.map((link) => (
                             <a
-                                key={item.label}
-                                href={item.href}
-                                onClick={() => setIsMenuOpen(false)}
-                                className="text-3xl font-black uppercase tracking-tighter hover:text-primary-600 transition-colors"
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-primary-500 hover:bg-white rounded-lg transition-all duration-300"
                             >
-                                {item.label}
+                                {link.label}
                             </a>
                         ))}
                         <a
                             href="#contato"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="px-10 py-5 bg-primary-500 text-white font-bold uppercase tracking-widest rounded-xl"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block btn-primary text-center text-sm"
                         >
-                            Orçamento Já
+                            Solicitar Orçamento
                         </a>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
         </header>
     );
 }

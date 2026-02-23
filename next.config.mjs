@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: '/Garrafas-GT',
-    assetPrefix: '/Garrafas-GT/',
     trailingSlash: true,
 
+    basePath: '/GARRAFAS-GT',
+    assetPrefix: '/GARRAFAS-GT/',
     images: {
         unoptimized: true, // Necessário para static export
         formats: ['image/webp', 'image/avif'],

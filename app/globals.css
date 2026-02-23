@@ -6,35 +6,20 @@
 
 :root {
     --color-primary: #00a04e;
-    --color-primary-dark: #004d26;
-    --color-primary-light: #00ff85;
-    --color-accent: #facc15;
-    --color-black: #0a0a0a;
+    --color-primary-dark: #008040;
+    --color-primary-light: #1ab167;
     --color-white: #ffffff;
-    --color-gray-50: #f7f7f7;
-    --color-gray-100: #ededed;
-    --color-gray-900: #1a1a1a;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-900: #111827;
 
-    /* PREMIUM SPACING */
-    --section-padding: clamp(80px, 12vw, 160px);
-    --container-max-width: 1440px;
-
-    /* LOGO CONFIG */
-    --logo-navbar-width: 160px;
-    --logo-hero-width: min(600px, 80vw);
-}
-
-@layer base {
-    body {
-        @apply antialiased select-none;
-        background-color: var(--color-white);
-        color: var(--color-black);
-    }
-
-    h1, h2, h3, h4 {
-        @apply font-display tracking-tight leading-[0.9] font-black uppercase;
-        letter-spacing: -0.04em;
-    }
+    /* TAMANHOS DA LOGO - AJUSTE AQUI! */
+    --logo-navbar-width: 180px;
+    /* Tamanho da logo na navbar */
+    --logo-navbar-height: 100px;
+    --logo-hero-width: 500px;
+    /* Tamanho da logo GRANDE no Hero */
+    --logo-hero-height: 200px;
 }
 
 * {
