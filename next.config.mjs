@@ -3,8 +3,8 @@ const nextConfig = {
     output: 'export',
     trailingSlash: true,
 
-    basePath: '/GARRAFAS-GT',
-    assetPrefix: '/GARRAFAS-GT/',
+    basePath: '/Garrafas-GT',
+    assetPrefix: '/Garrafas-GT/',
     images: {
         unoptimized: true, // Necessário para static export
         formats: ['image/webp', 'image/avif'],
