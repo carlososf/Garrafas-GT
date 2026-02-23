@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/utils';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -42,7 +43,7 @@ export default function Footer() {
                         <div className="mb-6">
                             <div className="relative w-48 h-14">
                                 <Image
-                                    src="/logo.png"
+                                    src={getImagePath('/logo-white.png')}
                                     alt="Plásticos GT - Qualidade que molda o futuro"
                                     fill
                                     className="object-contain object-left"
@@ -51,7 +52,7 @@ export default function Footer() {
                         </div>
 
                         <p className="text-gray-400 mb-6">
-                            Há mais de 25 anos fornecendo soluções em embalagens plásticas de alta qualidade,
+                            Desde 2013 fornecendo soluções em embalagens plásticas de alta qualidade,
                             com ferramentaria própria e projetos customizados para diversos segmentos industriais.
                         </p>
 

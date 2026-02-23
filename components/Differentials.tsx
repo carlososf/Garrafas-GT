@@ -192,7 +192,7 @@ export default function Differentials() {
                         </a>
                         <a
                             href="#configurador"
-                            className="btn-secondary border-white text-white hover:bg-white/10 w-full sm:w-auto"
+                            className="px-8 py-4 rounded-lg font-semibold border-2 border-white text-white transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
                         >
                             Configurar Projeto
                         </a>

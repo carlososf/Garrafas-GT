@@ -9,8 +9,8 @@ export default function Institutional() {
     // Fotos da empresa (você pode substituir por fotos reais)
     const companyPhotos = [
         { url: getImagePath('/images/fabrica-1.jpg'), alt: 'Fábrica Plásticos GT - Vista Externa' },
-        { url: getImagePath('/images/fabrica-2.jpg'), alt: 'Linha de Produção' },
-        { url: getImagePath('/images/fabrica-3.jpg'), alt: 'Ferramentaria' },
+        { url: getImagePath('/images/fabrica-2.jpg'), alt: 'Ferramentaria' },
+        { url: getImagePath('/images/fabrica-3.jpg'), alt: 'Linha de Produção' },
         { url: getImagePath('/images/fabrica-4.jpg'), alt: 'Equipe Técnica' },
     ];
 
@@ -165,31 +165,86 @@ export default function Institutional() {
                 </div>
             </div>
 
-            {/* Timeline - HORIZONTAL */}
-            <div className="max-w-5xl mx-auto">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center font-display">
-                    Nossa <span className="gradient-text">Trajetória</span>
-                </h3>
+            {/* Timeline - EDITORIAL NARRATIVE */}
+            <div className="max-w-6xl mx-auto py-20 relative">
+                <div className="text-center mb-16">
+                    <h3 className="text-4xl font-bold text-gray-900 mb-4 font-display">
+                        Nossa <span className="gradient-text">Jornada</span>
+                    </h3>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        Uma história moldada por desafios, inovação e o compromisso inabalável com a excelência técnica.
+                    </p>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {timeline.map((item, index) => (
-                        <div
-                            key={index}
-                            className="glass rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
-                        >
-                            <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                                <span className="text-3xl font-bold text-white font-display">
-                                    {item.year}
-                                </span>
+                {/* Connecting Line (Desktop) */}
+                <div className="hidden md:block absolute top-[60%] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-300 to-transparent z-0"></div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    {/* 2013 - Fundação */}
+                    <div className="group">
+                        <div className="relative mb-8 overflow-hidden rounded-2xl shadow-lg aspect-video">
+                            <img
+                                src={getImagePath('/images/fabrica-1.jpg')}
+                                alt="Fundação 2013"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4">
+                                <span className="text-4xl font-bold text-white font-display">2013</span>
                             </div>
-                            <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
-                                {item.title}
-                            </h4>
-                            <p className="text-gray-600">
-                                {item.description}
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+                            <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600">O Início de um Sonho</h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Fundada em São Paulo, a Plásticos GT iniciou suas atividades com a visão de oferecer embalagens
+                                superiores em PEAD e PP, focando inicialmente no mercado regional de cosméticos.
                             </p>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* 2018 - Expansão */}
+                    <div className="group md:mt-12">
+                        <div className="relative mb-8 overflow-hidden rounded-2xl shadow-lg aspect-video">
+                            <img
+                                src={getImagePath('/images/fabrica-3.jpg')}
+                                alt="Expansão 2018"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4">
+                                <span className="text-4xl font-bold text-white font-display">2018</span>
+                            </div>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+                            <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600">Salto Tecnológico</h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Implementamos nossa ferramentaria própria e modernizamos o parque industrial com sopradoras de alta precisão,
+                                permitindo a criação de frascos exclusivos com design complexo.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 2024 - Futuro */}
+                    <div className="group">
+                        <div className="relative mb-8 overflow-hidden rounded-2xl shadow-lg aspect-video">
+                            <img
+                                src={getImagePath('/images/fabrica-2.jpg')}
+                                alt="Liderança 2024"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4">
+                                <span className="text-4xl font-bold text-white font-display">2024</span>
+                            </div>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+                            <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600">Moldando o Futuro</h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Referência nacional em embalagens customizadas, servindo grandes indústrias com soluções sustentáveis,
+                                acabamentos premium e agilidade produtiva incomparável.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

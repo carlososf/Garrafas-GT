@@ -37,8 +37,8 @@ export default function ProjectConfigurator() {
         { id: 'custom', name: 'Projeto Customizado', icon: '⚙️', description: 'Desenvolvimento exclusivo' },
     ];
 
-    const capacities = ['50ml', '100ml', '250ml', '500ml', '1L', '2L', '5L', 'Outro'];
-    const colors = ['Branco', 'Transparente', 'Âmbar', 'Azul', 'Verde', 'Rosa', 'Preto', 'Colorido Personalizado'];
+    const capacities = ['70ml', '100ml', '250ml', '500ml', '1L', 'Outro'];
+    const colors = ['Branco', 'Transparente', 'Azul', 'Verde', 'Rosa', 'Preto', 'Colorido Personalizado'];
     const quantities = ['500 - 1.000', '1.000 - 5.000', '5.000 - 10.000', '10.000 - 50.000', 'Acima de 50.000'];
 
     const handleNext = () => {
